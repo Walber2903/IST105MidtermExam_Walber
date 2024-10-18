@@ -29,7 +29,8 @@ window.addEventListener('load', function () {
         provider.addScope('email');
         firebase.auth().signInWithPopup(provider)
             .then(function (result) {
-                console.log('Logging sucessfully', result.user);
+                console.log('Logging sucessfully with Google', result.user);
+                alert("Hello, I'm Walber. Welcome to my cultural connections page!");
                 location.href = 'culturalconnections.html';
             })
             .catch(function (error) {
