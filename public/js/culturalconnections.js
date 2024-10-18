@@ -1,7 +1,8 @@
-
+console.log('Iniciando authStateListener');
 function authStateListener() {
   // [START auth_state_listener]
   firebase.auth().onAuthStateChanged((user) => {
+    console.log('Auth State Changed:', user);
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/v8/firebase.User
