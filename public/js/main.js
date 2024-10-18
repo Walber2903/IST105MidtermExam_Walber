@@ -22,6 +22,21 @@ window.addEventListener('load', function () {
     //Listen for auth state changes
     authStateListener();
 
+    document.getElementById('sign-in-button').addEventListener('click', function () {
+
+        let provider = new firebase.auth.GoogleAuthProvider();
+
+        provider.addScope('email');
+        firebase.auth().signInWithPopup(provider)
+            .then(function (result) {
+                console.log('Logging sucessfully', result.user);
+                location.href = 'culturalconnections.html';
+            })
+            .catch(function (error) {
+                console.log('Logging fail', error);
+            });
+    });
+
     document.getElementById('sign-in-2').addEventListener('click', function () {
 
         let emailTxt = document.getElementById('email').value;
